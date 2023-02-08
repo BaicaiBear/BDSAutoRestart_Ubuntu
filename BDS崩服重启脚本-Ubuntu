@@ -1,0 +1,13 @@
+while :
+do
+        LD_LIBRARY_PATH=. ./bedrock_server
+        if [ $? -eq 0 ]
+        then
+                echo [可爱的重启脚本]服务器正常关闭
+                break
+        else
+                echo [可爱的重启脚本]崩服了，返回值$?。程序将在$1s后自动重启
+                sleep $1s
+                continue
+        fi
+done
